@@ -1,5 +1,6 @@
 import React from 'react'
 import fetch from 'node-fetch'
+
 export default class extends React.Component {
   static async getInitialProps () {
     const res = await fetch('http://api.football-data.org/v1/competitions/426/leagueTable')
@@ -9,7 +10,7 @@ export default class extends React.Component {
 
   render() {
     return (
-      <div>{JSON.stringify(this.props.data)}</div>
+      <pre>{JSON.stringify(this.props.data)}</pre>
     )
   }
 }
